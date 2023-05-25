@@ -1,8 +1,20 @@
 <div class="card mb-3">
   <div class="row no-gutters">
-    <div class="col-md-4">
-      <img [src]="post.thumbnail" class="card-img" alt="Post thumbnail" />
+    <div *ngIf="post.is_video; else thumbnailBlock">
+      <video width="320" height="240" controls>
+        <source
+          [src]="post.media.reddit_video.fallback_url"
+          type="video/mp4"
+          controls
+          autoplay
+        />
+        Your browser does not support the video tag.
+      </video>
     </div>
+
+    <ng-template #thumbnailBlock>
+      <img [src]="post.thumbnail" alt="{{ post.title }}" />
+    </ng-template>
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">{{ post.title }}</h5>

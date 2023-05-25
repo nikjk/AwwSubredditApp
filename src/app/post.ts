@@ -3,6 +3,10 @@ export interface Post {
   thumbnail: string;
   permalink: string;
   is_video: boolean;
+  media: { 
+    reddit_video: { 
+      fallback_url: string } 
+    }
 }
 
 export interface RedditResponse {

@@ -14,7 +14,7 @@ export class PostListComponent implements OnInit {
 
   ngOnInit(): void {
     this.redditService.getPosts().subscribe(response => {
-      this.posts = response.data.children.map(child => child.data).filter(post => !post.is_video).slice(0, 10); // <-- only take the first 10 posts
+      this.posts = response.data.children.map(child => child.data).slice(0, 10); // <-- only take the first 10 posts
     });
   }
 }
