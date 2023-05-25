@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.post-item {
+    box-sizing: border-box;
+    flex: 0 0 calc(50% - 10px);
+    margin: 5px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 500px;
+    overflow: auto;
+}
+
+.post-item img {
+    width: 100%;
+    height: auto;
+}
+
